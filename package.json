@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cp -r ./assets ./dist/assets && parcel index.html",
-    "build": "parcel build --public-url . index.html"
+    "build": "parcel build --public-url . index.html && git rev-parse HEAD > dist/git.hash",
+    "deploy": "git checkout gh-pages && cp -r dist/* . && git commit -m \"deploy new version app\" && git push && git checkout master"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
