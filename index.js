@@ -399,6 +399,12 @@ function initApp(){
   document.getElementById('selectAchtergrond').value = 'hikebike'
   setSourceBackgroundLayer(state.backgroundMap)
   registerEventHandlers()
+
+  window.onresize = function() {
+    document.body.height = window.innerHeight;
+  }
+
+  window.onresize();
 }
 
 initApp()

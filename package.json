@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cp -r ./assets ./dist/assets && parcel index.html",
     "build": "rm -rf dist/* && parcel build --public-url . index.html && git rev-parse HEAD > dist/git.hash",
-    "deploy": "git checkout gh-pages && git pull && cp -r dist/* . && git add --all && git commit -m \"deploy new version app\" && git push && git checkout master"
+    "deploy": "cd ../knooppunten_viewer-gh-pages && git checkout gh-pages && echo $(pwd) && git pull && rm -r * && cp -r ../knooppunten_viewer/dist/* . && git add --all && git commit -m \"deploy new version app\" && git push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
